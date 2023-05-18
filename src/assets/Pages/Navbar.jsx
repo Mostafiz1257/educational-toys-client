@@ -5,11 +5,11 @@ const Navbar = () => {
 
     const navItems =
         <div className="md:flex gap-5 ">
-          <Link to='/'> <p>Home</p></Link>
-          <Link to='/allToys'> <p>All Toys</p></Link>
-          <Link to='/myToys'> <p>My Toys</p></Link>
-           <p>Add a toys</p>
-           <p>Blogs</p>
+            <Link to='/'> <p>Home</p></Link>
+            <Link to='/allToys'> <p>All Toys</p></Link>
+            <Link to='/myToys'> <p>My Toys</p></Link>
+            <Link to='/addToy'>  <p>Add a toys</p></Link>
+            <Link to='/blog'> <p>Blogs</p></Link>
         </div>
     return (
         <div className="navbar bg-base-100">
@@ -33,7 +33,8 @@ const Navbar = () => {
                 {navItems}
             </div>
             <div className="navbar-end">
-                <a className="btn">Bye Now</a>
+                <button className="btn btn-outline btn-accent">Button</button>
+
             </div>
         </div>
     );
