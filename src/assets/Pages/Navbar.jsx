@@ -4,7 +4,7 @@ const Navbar = () => {
 
 
     const navItems =
-        <div className="md:flex gap-5 ">
+        <div className="md:flex gap-5 text-teal-500">
             <Link to='/'> <p>Home</p></Link>
             <Link to='/allToys'> <p>All Toys</p></Link>
             <Link to='/myToys'> <p>My Toys</p></Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
                         <img src="https://i.ibb.co/fdRXs9d/t3.jpg" />
                     </div>
                 </div>
-                <a className="btn btn-ghost normal-case text-2xl font-bold">Educational Toys</a>
+                <a className="btn btn-ghost normal-case text-2xl font-bold text-teal-400">Educational Toys</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 {navItems}

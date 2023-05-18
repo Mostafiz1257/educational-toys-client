@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "counting Kit",
+    "price": 49.99,
+    "likes": 152,
+    "image": "https://i.ibb.co/8jnnw8s/tt7.jpg"
+   
+  },
+  {
+    "id": 2,
+    "name": "Chemistry Lab Set",
+    "price": 34.99,
+    "likes": 89,
+    "image": "https://i.ibb.co/ts3fQ7G/tt1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Math Puzzle Blocks",
+    "price": 19.99,
+    "likes": 63,
+    "image": "https://i.ibb.co/51mP6Yg/tt2.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Solar System Model",
+    "price": 29.99,
+    "likes": 112,
+    "image": "https://i.ibb.co/cxMVGyh/tt4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Language Learning Tablet",
+    "price": 39.99,
+    "likes": 77,
+    "image": "https://i.ibb.co/RSzTnNZ/tt6.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Construction Engineering Set",
+    "price": 24.99,
+    "likes": 98,
+    "image": "https://i.ibb.co/87yL5DV/lt.webp"
+  },
+  {
+    "id": 7,
+    "name": "Microscope Kit",
+    "price": 54.99,
+    "likes": 123,
+    "image": "https://i.ibb.co/W0JS9cN/tt8.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Magnetic Alphabet Letters",
+    "price": 14.99,
+    "likes": 56,
+    "image": "https://i.ibb.co/XWKfsp7/tt10.webp"
+  }
+]
