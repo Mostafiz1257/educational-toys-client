@@ -1,11 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import {  GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
-const googleProvider = GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider()
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
@@ -13,15 +13,15 @@ const AuthProvider = ({ children }) => {
     const { loading, setLoading } = useState(true)
 
     const createUser = (email,password)=>{
-        setLoading(true)
+        // setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
     const signIn = (email,password)=>{
-        setLoading(true)
+        // setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     const googleSignIn =()=>{
-        setLoading(true)
+        // setLoading(true)
         return signInWithPopup(auth,googleProvider)
     }
     const ProfileUpdate =(profile)=>{
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
-            setLoading(false)
+            // setLoading(false)
         })
         return()=>{
             unSubscribe();

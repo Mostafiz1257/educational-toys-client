@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+
+    const { createUser, ProfileUpdate } = useContext(AuthContext)
 
     const handleRegister = event => {
         event.preventDefault();
@@ -11,7 +15,31 @@ const Register = () => {
         const password = form.password.value;
         const user = { name, photo, email, password }
         console.log(user);
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user
+                ProfileUpdate({displayName:name, photoURL:photo})
+                console.log(createdUser);
+                updateUserData(result.user,name)
+            })
+            .then(error => {
+                console.log(error);
+            })
+          
+
     }
+    const updateUserData =(name,user)=>{
+        ProfileUpdate(user,{
+            displayName:name
+        })
+        .then(result=>{
+            console.log('user name Updated');
+        })
+        .then(error=>{
+            console.log(error);
+        })
+    }
+   
     return (
         <div className="hero min-h-screen mb-12">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
