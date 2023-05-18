@@ -14,7 +14,7 @@ const Login = () => {
         <div className="hero min-h-screen ">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleLogin}>
-                    <div className="card-body">
+                    <div className="card-body hover:shadow-2xl ">
                         <h3 className="text-3xl font-bold text-teal-700">Please Login....!</h3>
                         <div className="form-control">
                             <label className="label">
