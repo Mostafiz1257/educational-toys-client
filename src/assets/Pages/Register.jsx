@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Register = () => {
 
@@ -12,8 +13,7 @@ const Register = () => {
         console.log(user);
     }
     return (
-        <div className="hero min-h-screen bg-teal-50">
-
+        <div className="hero min-h-screen mb-12">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleRegister}>
                     <div className="card-body">
@@ -45,6 +45,7 @@ const Register = () => {
                         <div className="form-control mt-6">
 
                             <button type="submit" className="btn bg-teal-700 hover:bg-teal-900">Register</button>
+                            <p className="text-teal-700 mt-4 font-bold">I have already an account ? <Link to='/login'><span className="text-primary underline">Login</span></Link> here</p>
                         </div>
                     </div>
                 </form>
