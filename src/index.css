@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.active-route{
+    @apply underline underline-offset-4 font-bold decoration-4 text-teal-700 -translate-y-2 duration-200
+}

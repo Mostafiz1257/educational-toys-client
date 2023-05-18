@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
 
     const navItems =
-        <div className="md:flex gap-5 text-teal-500">
-            <Link to='/'> <p>Home</p></Link>
-            <Link to='/allToys'> <p>All Toys</p></Link>
-            <Link to='/myToys'> <p>My Toys</p></Link>
-            <Link to='/addToy'>  <p>Add a toys</p></Link>
-            <Link to='/blog'> <p>Blogs</p></Link>
+        <div className="md:flex gap-7 text-teal-500">
+         
+            <NavLink to='/' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>Home</p></NavLink>
+            <NavLink to='/allToys' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>All Toys</p></NavLink>
+            <NavLink to='/myToys' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>My Toys</p></NavLink>
+            <NavLink to='/addToy' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>Add a toys</p></NavLink>
+            <NavLink to='/blog ' className={({ isActive }) => (isActive ? 'active-route' : 'default')}>  <p>Blogs</p></NavLink>
         </div>
     return (
         <div className="navbar bg-base-100">

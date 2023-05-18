@@ -9,7 +9,7 @@ const Banner = () => {
                         <h2 className="text-5xl font-bold">Learn with your  <span className="text-teal-300">favorite Toys</span></h2>
                         <p className="font-bold">Here is many types of toys,you can choose for your your baby and it will help for learn for your brain growth. </p>
                         <div >
-                            <button className="btn btn-active btn-accent mr-3">Buy Now</button>
+                         
                             <button className="btn btn-outline btn-accent">See all Toys</button>
 
                         </div>
