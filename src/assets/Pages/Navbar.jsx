@@ -34,7 +34,7 @@ const Navbar = () => {
                 {navItems}
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-accent">Button</button>
+                <Link to='/allToys'><button className="btn btn-outline btn-accent">Take Now</button></Link>
 
             </div>
         </div>
