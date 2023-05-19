@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
-const {signIn}=useContext(AuthContext)
+const {signIn,googleSignIn}=useContext(AuthContext)
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -12,6 +12,16 @@ const {signIn}=useContext(AuthContext)
         const user = { email, password }
         console.log(user);
         signIn(email,password)
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .then(error=>{
+            console.log(error.message);
+        })
+    }
+    const handleGoggle=()=>{
+        googleSignIn()
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -42,10 +52,12 @@ const {signIn}=useContext(AuthContext)
                             <button type="submit" className="btn bg-teal-700 hover:bg-teal-900">Login</button>
                             <p className="text-teal-700 mt-4 font-bold">I have no account ? <Link to='/register'><span className="text-primary underline">Register</span></Link> here</p>
                         </div>
+                        <p className="divider text-teal-700">or</p>
+                        <p onClick={handleGoggle}><FaGoogle className='text-3xl hover:cursor-pointer mx-auto '></FaGoogle></p>
                     </div>
                 </form>
             </div>
-
+           
         </div>
     );
 };

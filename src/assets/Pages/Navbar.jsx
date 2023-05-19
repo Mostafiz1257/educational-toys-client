@@ -1,15 +1,33 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
 
+    const { user ,logOut } = useContext(AuthContext)
+    console.log(user?.photoURL);
 
+    const handleSignOut =()=>{
+        logOut()
+        .then(()=>{
+
+        })
+        .then(error=>{
+            console.log(error);
+        })
+    }
     const navItems =
         <div className="md:flex gap-7 text-teal-500">
-         
+
             <NavLink to='/' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>Home</p></NavLink>
             <NavLink to='/allToys' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>All Toys</p></NavLink>
-            <NavLink to='/myToys' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>My Toys</p></NavLink>
-            <NavLink to='/addToy' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>Add a toys</p></NavLink>
+
+            {
+                user ?
+                <><NavLink to='/myToys' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>My Toys</p></NavLink>
+                <NavLink to='/addToy' className={({ isActive }) => (isActive ? 'active-route' : 'default')}> <p>Add a toys</p></NavLink></>:' '
+            }
+
             <NavLink to='/blog ' className={({ isActive }) => (isActive ? 'active-route' : 'default')}>  <p>Blogs</p></NavLink>
         </div>
     return (
@@ -33,8 +51,20 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 {navItems}
             </div>
-            <div className="navbar-end">
-                <Link to='/allToys'><button className="btn btn-outline btn-accent">Take Now</button></Link>
+            <div className="navbar-end md:gap-3">
+                {
+                    user ?
+                        <>
+                            <div className="avatar">
+                                <div className="w-12 rounded-full">
+                                    <img src={user?.photoURL} title={user?user.displayName:' '}/>
+                                </div>
+                            </div>
+                            <Link ><button onClick={handleSignOut} className="btn btn-outline btn-accent">Logout</button></Link>
+                        </> :
+                        <Link to='/login'><button className="btn btn-outline btn-accent">Login Now</button></Link>
+                }
+
 
             </div>
         </div>

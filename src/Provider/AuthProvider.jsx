@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {  GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import {  GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 
@@ -9,20 +9,24 @@ const googleProvider = new GoogleAuthProvider()
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
-    const { user, setUser } = useState(null)
-    const { loading, setLoading } = useState(true)
+    const [ user, setUser ] = useState(null)
+    const [ loading, setLoading ] = useState(true)
 
     const createUser = (email,password)=>{
-        // setLoading(true)
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
     const signIn = (email,password)=>{
-        // setLoading(true)
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     const googleSignIn =()=>{
-        // setLoading(true)
+        setLoading(true)
         return signInWithPopup(auth,googleProvider)
+    }
+    const logOut =()=>{
+        // loading(true)
+        return signOut(auth)
     }
     const ProfileUpdate =(profile)=>{
         return updateProfile(auth.currentUser,profile)
@@ -31,14 +35,14 @@ const AuthProvider = ({ children }) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
-            // setLoading(false)
+            setLoading(false)
         })
         return()=>{
             unSubscribe();
         }
     },[])
 
-    const authInfo = { user , createUser,signIn,googleSignIn,ProfileUpdate,loading}
+    const authInfo = { user , createUser,signIn,googleSignIn,logOut,ProfileUpdate,loading}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

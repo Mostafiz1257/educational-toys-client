@@ -24,8 +24,7 @@ const Register = () => {
             })
             .then(error => {
                 console.log(error);
-            })
-          
+            })    
 
     }
     const updateUserData =(name,user)=>{
