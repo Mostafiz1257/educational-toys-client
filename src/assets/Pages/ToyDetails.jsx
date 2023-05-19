@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 const ToyDetails = () => {
 
     const toyDetails = useLoaderData()
-    const { photo, name, seller, email, price, ratings, quantity, details } = toyDetails
+    const { photo, name, seller, email, price, ratings, quantity, details } = toyDetails || {}
 
     return (
         <>

@@ -7,7 +7,7 @@ const TableRow = ({ toy, index }) => {
     const {_id, seller, name, sub_category, price, quantity } = toy
     return (
         <tr>
-            {/* <th>{ index}</th> */}
+            <th>{ index +1}</th>
             <td>{seller}</td>
             <td>{name}</td>
             <td>{sub_category}</td>

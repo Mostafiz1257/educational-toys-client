@@ -19,7 +19,7 @@ const AllToys = () => {
                     <table className="table table-compact w-full">
                         <thead>
                             <tr>
-                                {/* <th>Index</th> */}
+                                <th>Index</th>
                                 <th>Seller</th>
                                 <th>Toy Name</th>
                                 <th>category</th>
@@ -30,8 +30,9 @@ const AllToys = () => {
                         </thead>
                         <tbody>
                             {
-                    toys.map((toy,index)=><TableRow key={toy._id } index={index} toy={toy} ></TableRow> )
-                }
+                                toys.map((toy, index) => <TableRow key={toy._id} index={index} toy={toy} ></TableRow>)
+                               
+                            }
 
                         </tbody>
 
