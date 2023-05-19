@@ -6,3 +6,6 @@
 .active-route{
     @apply underline underline-offset-4 font-bold decoration-4 text-teal-700 -translate-y-2 duration-100
 }
+.sponsor{
+    @apply hover:cursor-pointer hover:-translate-y-2 duration-200
+}

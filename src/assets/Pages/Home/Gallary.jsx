@@ -10,7 +10,7 @@ const Gallary = () => {
     },[])
     return (
         <div className="mt-12  ">
-            <div className="text-center w-1/2  justify-center mx-auto">
+            <div className="text-center w-1/2  justify-center mx-auto" data-aos="zoom-out-right">
                 <h4 className="font-bold text-xl text-teal-400">Gallery</h4>
                 <h1 className="text-4xl font-bold text-teal-400">Take Your Toys Now....!</h1>
                 <p className="font-bold">Here you can see many types of toys.You can choose it.After choosing them you can buy and take it for your children</p>
