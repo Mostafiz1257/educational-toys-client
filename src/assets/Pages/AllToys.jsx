@@ -12,14 +12,14 @@ const AllToys = () => {
     }, [])
     return (
         <div>
-            <h2 className="text-3xl font-bold text-center text-teal-500">Get You Favorite Toy Now</h2>
+            <h2 className="text-3xl font-bold text-center text-teal-500  mb-12">Get You Favorite Toy Now</h2>
             <div>
 
                 <div className="overflow-x-auto">
                     <table className="table table-compact w-full">
                         <thead>
                             <tr>
-                                <th>Index</th>
+                                {/* <th>Index</th> */}
                                 <th>Seller</th>
                                 <th>Toy Name</th>
                                 <th>category</th>
@@ -30,7 +30,7 @@ const AllToys = () => {
                         </thead>
                         <tbody>
                             {
-                    toys.map(toy=><TableRow key={toy._id } toy={toy} ></TableRow> )
+                    toys.map((toy,index)=><TableRow key={toy._id } index={index} toy={toy} ></TableRow> )
                 }
 
                         </tbody>

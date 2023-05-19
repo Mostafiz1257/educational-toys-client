@@ -8,6 +8,7 @@ import AddToys from "../assets/Pages/AddToys";
 import Blog from "../assets/Pages/Blog";
 import Login from "../assets/Pages/Login";
 import Register from "../assets/Pages/Register";
+import ToyDetails from "../assets/Pages/ToyDetails";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         {
           path:'register',
           element:<Register></Register>
+        },
+        {
+          path:'toyDetails/:id',
+          element:<ToyDetails></ToyDetails>,
+          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
         }
       ]
     },
