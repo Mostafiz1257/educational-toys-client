@@ -6,7 +6,7 @@ const TableRow = ({ toy, index }) => {
     // eslint-disable-next-line react/prop-types
     const {_id, seller, name, sub_category, price, quantity } = toy
     return (
-        <tr>
+        <tr className="font-bold text-teal-500 hover:-translate-y-2 duration-200 cursor-pointer hover:text-teal-900">
             <th>{ index +1}</th>
             <td>{seller}</td>
             <td>{name}</td>

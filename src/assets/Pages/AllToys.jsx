@@ -19,7 +19,7 @@ useTitle('All Toys')
                 <div className="overflow-x-auto">
                     <table className="table table-compact w-full">
                         <thead>
-                            <tr>
+                            <tr className="text-teal-800">
                                 <th>Index</th>
                                 <th>Seller</th>
                                 <th>Toy Name</th>
