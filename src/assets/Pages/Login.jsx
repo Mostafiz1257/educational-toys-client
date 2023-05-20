@@ -1,9 +1,13 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 const Login = () => {
 const {signIn,googleSignIn}=useContext(AuthContext)
+const [error,setError] = useState('')
+const navigate = useNavigate();
+const location = useLocation()
+const from = location?.state?.from?.pathname || '/'
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -15,9 +19,11 @@ const {signIn,googleSignIn}=useContext(AuthContext)
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser);
+            navigate(from,{replace:true})
         })
-        .then(error=>{
+        .catch(error=>{
             console.log(error.message);
+            setError(error)
         })
     }
     const handleGoggle=()=>{
@@ -26,8 +32,9 @@ const {signIn,googleSignIn}=useContext(AuthContext)
             const loggedUser = result.user;
             console.log(loggedUser);
         })
-        .then(error=>{
+        .catch(error=>{
             console.log(error.message);
+            
         })
     }
     return (
@@ -48,6 +55,9 @@ const {signIn,googleSignIn}=useContext(AuthContext)
                             </label>
                             <input type="password" name='password' required placeholder="Enter your password" className="input input-bordered" />
                         </div>
+                        {
+                            error && <p className="text-red-500">Login with correct email or password ....!!</p>
+                        }
                         <div className="form-control mt-6">
                             <button type="submit" className="btn bg-teal-700 hover:bg-teal-900">Login</button>
                             <p className="text-teal-700 mt-4 font-bold">I have no account ? <Link to='/register'><span className="text-primary underline">Register</span></Link> here</p>

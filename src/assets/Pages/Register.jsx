@@ -1,10 +1,15 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
 
     const { createUser, ProfileUpdate } = useContext(AuthContext)
+    const [error,setError] = useState('')
+
+    const navigate = useNavigate()
+    const localtion = useLocation()
+    const from = location?.state?.from?.pathname || '/'
 
     const handleRegister = event => {
         event.preventDefault();
@@ -13,6 +18,9 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        if(password.length<6){
+            setError('password must be at least 6 digit')
+        }
         const user = { name, photo, email, password }
         console.log(user);
         createUser(email, password)
@@ -21,8 +29,9 @@ const Register = () => {
                 ProfileUpdate({displayName:name, photoURL:photo})
                 console.log(createdUser);
                 updateUserData(result.user,name)
+                navigate(from, {replace:true})
             })
-            .then(error => {
+            .catch(error => {
                 console.log(error);
             })    
 
@@ -34,7 +43,7 @@ const Register = () => {
         .then(result=>{
             console.log('user name Updated');
         })
-        .then(error=>{
+        .catch(error=>{
             console.log(error);
         })
     }
@@ -69,8 +78,10 @@ const Register = () => {
                             </label>
                             <input type="password" name='password' required placeholder="Enter your password" className="input input-bordered" />
                         </div>
+                        {
+                            error && <p className="text-red-500">{error}</p>
+                        }
                         <div className="form-control mt-6">
-
                             <button type="submit" className="btn bg-teal-700 hover:bg-teal-900">Register</button>
                             <p className="text-teal-700 mt-4 font-bold">I have already an account ? <Link to='/login'><span className="text-primary underline">Login</span></Link> here</p>
                         </div>
