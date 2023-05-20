@@ -4,13 +4,14 @@ import useTitle from "../../hooks/useTitle";
 
 
 const AllToys = () => {
-useTitle('All Toys')
+    useTitle('All Toys')
     const [toys, setToys] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+   
     return (
         <div>
             <h2 className="text-3xl font-bold text-center text-teal-500  mb-12">Get You Favorite Toy Now</h2>
@@ -30,11 +31,12 @@ useTitle('All Toys')
                             </tr>
                         </thead>
                         <tbody>
+                           
                             {
                                 toys.map((toy, index) => <TableRow key={toy._id} index={index} toy={toy} ></TableRow>)
-                               
-                            }
 
+                            }
+                          
                         </tbody>
 
                     </table>

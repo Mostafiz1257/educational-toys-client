@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
-
 const Navbar = () => {
 
     const { user ,logOut } = useContext(AuthContext)
@@ -30,6 +29,7 @@ const Navbar = () => {
             }
 
             <NavLink to='/blog ' className={({ isActive }) => (isActive ? 'active-route' : 'default')}>  <p>Blogs</p></NavLink>
+            
         </div>
     return (
         <div className="navbar bg-base-100">
