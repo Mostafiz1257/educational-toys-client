@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_appId);
 const firebaseConfig = {
-  apiKey: "AIzaSyAM80W7ZB0398ZRzpht3uY66Ap5LqxwYKc",
-  authDomain: "educational-toy.firebaseapp.com",
-  projectId: "educational-toy",
-  storageBucket: "educational-toy.appspot.com",
-  messagingSenderId: "77296900589",
-  appId: "1:77296900589:web:1e9806a41b4cf9b896afe4"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
