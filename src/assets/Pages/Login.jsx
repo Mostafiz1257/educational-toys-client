@@ -2,7 +2,9 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 const Login = () => {
+    useTitle('Login')
 const {signIn,googleSignIn}=useContext(AuthContext)
 const [error,setError] = useState('')
 const navigate = useNavigate();

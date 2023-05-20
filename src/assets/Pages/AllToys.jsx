@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import TableRow from "./TableRow";
+import useTitle from "../../hooks/useTitle";
 
 
 const AllToys = () => {
-
+useTitle('All Toys')
     const [toys, setToys] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/toys')

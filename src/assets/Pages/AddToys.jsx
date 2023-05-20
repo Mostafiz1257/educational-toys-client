@@ -1,8 +1,10 @@
 
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddToys = () => {
+    useTitle('Add Toy')
     const { user } = useContext(AuthContext)
     const handleAddToy = event =>{
         event.preventDefault();
@@ -32,7 +34,7 @@ const AddToys = () => {
     }
     return (
         <div>
-            <h2 className='text-4xl font-bold text-center text-teal-500 mb-12'>Add toys</h2>
+            <h2 className='text-4xl font-bold text-center text-teal-500 mb-12 underline underline-offset-8'>Add toys</h2>
            <form onSubmit={handleAddToy}>
            <div className=' w-1/2 mx-auto	'>
                 <div className='md:flex gap-3'>
@@ -98,7 +100,7 @@ const AddToys = () => {
                     </div>
                 </div>
                 <div>
-                <button className="btn btn-wide bg-teal-700 hover:bg-teal-600">Add Toy Now</button>
+                <button className="btn btn-wide bg-teal-700 hover:bg-teal-600">Add To Website</button>
                 </div>
             </div>
            </form>
