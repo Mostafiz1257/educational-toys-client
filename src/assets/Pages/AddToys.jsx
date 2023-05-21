@@ -21,7 +21,7 @@ const AddToys = () => {
         const details = form.details.value;
         const toy = { photo, name, seller, email, sub_category, price, ratings, quantity, details }
         console.log(toy);
-        fetch('https://educational-toys-server-phi.vercel.app/toys', {
+        fetch('https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/toys', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -9,7 +9,7 @@ useTitle('Register')
     const [error,setError] = useState('')
 
     const navigate = useNavigate()
-    const localtion = useLocation()
+    const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
 
     const handleRegister = event => {

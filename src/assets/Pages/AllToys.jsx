@@ -7,7 +7,7 @@ const AllToys = () => {
     useTitle('All Toys')
     const [toys, setToys] = useState([])
     useEffect(() => {
-        fetch('https://educational-toys-server-phi.vercel.app/toys')
+        fetch('https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/toys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])

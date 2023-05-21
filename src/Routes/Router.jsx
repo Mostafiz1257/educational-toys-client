@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       {
         path: '/toyDetails/:id',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://educational-toys-server-phi.vercel.app/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/toys/${params.id}`)
       },
       {
         path: '/updateDetails/:id',
         element: <UpdateToyDetails></UpdateToyDetails>,
-        loader: ({ params }) => fetch(`https://educational-toys-server-phi.vercel.app/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/toys/${params.id}`)
       }
     ]
   },

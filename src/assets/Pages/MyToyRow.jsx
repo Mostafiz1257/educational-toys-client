@@ -18,7 +18,7 @@ const MyToyRow = ({ toy, index, myToys, setMyToys }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://educational-toys-server-phi.vercel.app/toys/${id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/toys/${id}`, {
                     method: "DELETE"
                 })
                 Swal.fire(

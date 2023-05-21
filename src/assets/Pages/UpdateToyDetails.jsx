@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -13,7 +13,7 @@ const UpdateToyDetails = () => {
         const details = form.details.value;
         const toy = { price, quantity, details }
         console.log(toy);
-        fetch(`https://educational-toys-server-phi.vercel.app/mytoys/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/mytoys/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

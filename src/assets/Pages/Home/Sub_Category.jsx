@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Card from './Card';
@@ -7,7 +7,7 @@ const Sub_Category = () => {
     const [categories, setCategories] = useState([])
     const [activeTab, setActiveTab] = useState('Math')
     useEffect(() => {
-        fetch(`http://localhost:5000/category/${activeTab}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mostafiz1257.vercel.app/category/${activeTab}`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [activeTab])
@@ -38,13 +38,13 @@ const Sub_Category = () => {
                         }
                     </div>
                     <TabPanel>
-                       
+
                     </TabPanel>
                     <TabPanel>
-                       
+
                     </TabPanel>
                     <TabPanel>
-                      
+
                     </TabPanel>
                 </Tabs>
             </div>
