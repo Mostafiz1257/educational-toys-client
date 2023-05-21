@@ -12,7 +12,7 @@ const Navbar = () => {
         .then(()=>{
 
         })
-        .then(error=>{
+        .catch(error=>{
             console.log(error);
         })
     }
@@ -47,7 +47,7 @@ const Navbar = () => {
                         <img src="https://i.ibb.co/fdRXs9d/t3.jpg" />
                     </div>
                 </div>
-                <a className="btn btn-ghost normal-case text-2xl font-bold text-teal-800">Educational Toys</a>
+                <a className=" lg:text-4xl cursor-pointer font-bold text-teal-800">Educational Toys</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 {navItems}

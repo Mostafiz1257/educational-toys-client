@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee";
 const FeedBack = () => {
     return (
         <div>
-            <div className="w-1/2 mx-auto mb-12" data-aos="zoom-out-left">
-                <h3 className="font-bold text-teal-700 text-5xl text-center">Customer FeedBack</h3>
+            <div className="w-1/2 md:mx-auto mb-12" data-aos="zoom-out-left">
+                <h3 className="font-bold text-teal-700 md:text-5xl text-center">Customer FeedBack</h3>
                 <p className="font-bold text-center text-teal-700">Here you can see out pride cuntomer review us in different time...we are very happy fou them.</p>
             </div>
             <Marquee speed={100}>

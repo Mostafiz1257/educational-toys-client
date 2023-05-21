@@ -4,16 +4,16 @@ import Swal from 'sweetalert2';
 
 const UpdateToyDetails = () => {
     const updateToys = useLoaderData()
-    const {_id, price, quantity, details } = updateToys
+    const { _id, price, quantity, details } = updateToys
     const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
-        const toy = {price,quantity,details}
+        const toy = { price, quantity, details }
         console.log(toy);
-        fetch(`http://localhost:5000/mytoys/${_id}`, {
+        fetch(`https://educational-toys-server-phi.vercel.app/mytoys/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const UpdateToyDetails = () => {
     }
     return (
         <div>
-          
+
             <div>
                 <h2 className='text-4xl font-bold text-center text-teal-500 mb-12 underline underline-offset-8'>Update toy</h2>
                 <form onSubmit={handleUpdate}>
@@ -73,12 +73,12 @@ const UpdateToyDetails = () => {
                                     <input type="text" name='details' defaultValue={details} required placeholder='' className="input input-bordered h-[100px]" />
                                 </div>
                             </div>
-                           
+
                         </div>
                         <div>
-                                <button className="btn btn-wide bg-teal-700 hover:bg-teal-600">Update To Website</button>
-                            </div>
+                            <button className="btn btn-wide bg-teal-700 hover:bg-teal-600">Update To Website</button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>

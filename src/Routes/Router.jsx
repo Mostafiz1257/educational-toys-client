@@ -13,51 +13,51 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateToyDetails from "../assets/Pages/UpdateToyDetails";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-          path:'allToys',
-          element:<AllToys></AllToys>
-        },
-        {
-          path:'myToys',
-          element:<MyToys></MyToys>
-        },
-        {
-          path:'addToy',
-          element:<AddToys></AddToys>
-        },
-        {
-          path:'blog',
-          element:<Blog></Blog>
-        },
-        {
-          path:'login',
-          element:<Login></Login>
-        },
-        {
-          path:'register',
-          element:<Register></Register>
-        },
-        {
-          path:'/toyDetails/:id',
-          element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
-        },
-        {
-          path:'/updateDetails/:id',
-          element:<UpdateToyDetails></UpdateToyDetails>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'allToys',
+        element: <AllToys></AllToys>
+      },
+      {
+        path: 'myToys',
+        element: <MyToys></MyToys>
+      },
+      {
+        path: 'addToy',
+        element: <AddToys></AddToys>
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      },
+      {
+        path: '/toyDetails/:id',
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://educational-toys-server-phi.vercel.app/toys/${params.id}`)
+      },
+      {
+        path: '/updateDetails/:id',
+        element: <UpdateToyDetails></UpdateToyDetails>,
+        loader: ({ params }) => fetch(`https://educational-toys-server-phi.vercel.app/toys/${params.id}`)
+      }
+    ]
+  },
+]);
 
-  export default router;
+export default router;

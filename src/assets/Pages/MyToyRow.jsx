@@ -18,7 +18,7 @@ const MyToyRow = ({ toy, index, myToys, setMyToys }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://educational-toys-server-phi.vercel.app/toys/${id}`, {
                     method: "DELETE"
                 })
                 Swal.fire(
@@ -29,7 +29,7 @@ const MyToyRow = ({ toy, index, myToys, setMyToys }) => {
                 // eslint-disable-next-line react/prop-types
                 const remaining = myToys.filter(toy => toy._id !== id)
                 setMyToys(remaining)
-                
+
             }
         })
     }
